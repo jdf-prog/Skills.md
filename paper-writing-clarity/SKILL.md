@@ -42,7 +42,13 @@ Use consistent terminology throughout the manuscript. Once a canonical term is c
 
 ## Section Patterns
 
-For an introduction, a strong default structure is:
+### Introduction Organization
+
+At a high level, the introduction should move the reader from the field's current evaluation position to the paper's exact missing problem, then to the proposed answer and its evidence. It should not read like a feature checklist.
+
+The organizing principle is: prior landscape -> concrete gap -> central research question or target capability -> solution thesis -> supporting features -> evaluation protocol -> findings and insights.
+
+Each paragraph should have a distinct role. A strong default structure is:
 
 1. Concrete prior-work landscape and gap.
 2. The missing capability, setting, or evaluation target.
@@ -52,6 +58,8 @@ For an introduction, a strong default structure is:
 6. Main empirical findings.
 7. Higher-level insights from analysis.
 
+The central contribution should appear before the support points. Supporting features should be presented as necessary parts of the answer, not as disconnected advantages. Results should not be limited to leaderboard numbers; include the main insight that explains what the experiments reveal about the field.
+
 For benchmark or dataset sections, organize around reader questions:
 
 1. What is being evaluated?
@@ -59,11 +67,17 @@ For benchmark or dataset sections, organize around reader questions:
 3. How is execution made valid and safe?
 4. How are outputs or traces judged?
 
-For experiment sections, use a clear hierarchy:
+### Experiment Organization
+
+At a high level, experiments should answer three questions in order: what was evaluated, how well systems performed, and why they performed that way. Do not give every analysis equal weight; organize evidence from headline results to explanatory diagnosis.
+
+Use a clear hierarchy:
 
 1. `Experimental Setup`: models, harness, metrics, data splits, and implementation details that affect interpretation.
 2. `Main Results`: headline metric first, then model ranking, domain variation, and efficiency or cost if available.
 3. `Analysis` or `Trace-Level Diagnosis`: explain why results look the way they do.
+
+Keep setup short unless it changes the interpretation of the results. Main results should start with the primary metric and the most important comparison, then move to secondary patterns such as domain variation, cost-performance tradeoffs, robustness, or scaling behavior. Analysis should diagnose mechanisms behind the scores, not restate the table.
 
 Each analysis paragraph should correspond to a figure, table, or clearly marked missing-analysis TODO. Failure analysis can live inside trace-level diagnosis when it explains mechanisms rather than merely listing errors.
 
