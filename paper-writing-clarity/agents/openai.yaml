@@ -1,0 +1,7 @@
+interface:
+  display_name: "Paper Writing Clarity"
+  short_description: "Clarify academic paper structure and claims."
+  default_prompt: "Use $paper-writing-clarity to restructure this paper section around a clear research question, terminology, evidence, and appendix plan."
+
+policy:
+  allow_implicit_invocation: true
